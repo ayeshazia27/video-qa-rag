@@ -5,7 +5,7 @@ import streamlit as st
 from moviepy.editor import VideoFileClip
 import openai
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import FAISS
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.docstore.document import Document
 from langchain.chains.question_answering import load_qa_chain
@@ -139,7 +139,7 @@ if uploaded_files and st.button("Process Videos"):
             split_docs = text_splitter.split_documents(st.session_state.all_docs)
             
             embeddings = OpenAIEmbeddings(openai_api_key=OPENAI_API_KEY)
-            st.session_state.vector_db = Chroma.from_documents(split_docs, embeddings)
+            st.session_state.vector_db = FAISS.from_documents(split_docs, embeddings)
             st.session_state.videos_processed = True
             st.success(f"Processed {len(st.session_state.video_info)} videos successfully!")
         else:
