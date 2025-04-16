@@ -7,5 +7,3 @@ chromadb
 ffmpeg-python
 imageio-ffmpeg
 python-dotenv
-uuid
-tempfile
