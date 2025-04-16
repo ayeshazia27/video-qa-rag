@@ -7,3 +7,4 @@ chromadb
 ffmpeg-python
 imageio-ffmpeg
 python-dotenv
+langchain-community==0.0.31
