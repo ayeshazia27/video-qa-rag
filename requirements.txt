@@ -3,8 +3,10 @@ moviepy==1.0.3
 openai
 langchain
 langchain-openai
-chromadb
+langchain-community==0.0.31
+faiss-cpu
 ffmpeg-python
 imageio-ffmpeg
+tiktoken
 python-dotenv
-langchain-community==0.0.31
+
